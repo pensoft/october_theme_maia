@@ -1,0 +1,35 @@
+title = "Login"
+url = "/login"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+header_image = "Maya_Login.jpg"
+
+[account]
+redirect = "internal-documents"
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+<?php
+	function onStart(){
+		$this['message'] = Session::get('message');
+	}
+?>
+==
+<div class="container">
+	{% if message %}
+		<h1 style="color: #639442;">{{ message }}</h1>
+	{% endif %}
+    {% if not user %}
+    
+        <div class="row">
+    
+            <div class="col-md-12" style="margin: 0 auto;">
+                {% partial 'components/account/signin' %}
+            </div>
+    
+        </div>
+    {% endif %}
+</div>
