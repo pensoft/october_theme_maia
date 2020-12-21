@@ -1,11 +1,39 @@
-name: "Pensoft Theme"
+name: "Maia"
 author: "PensoftTeam"
 homepage: "https://pensoft.net"
 description: "Demonstrates the basic concepts of the front-end theming."
 previewImage: "assets/images/preview.png"
 require:
-    - AnandPatel.SeoExtension
-    - RainLab.Sitemap
+    - rainlab.builder
+    - rainlab.googleanalytics
+    - rainlab.location
+    - rainlab.pages
+    - rainlab.sitemap
+    - rainlab.translate
+    - rainlab.user
+    - abwebdevelopers.imageresize
+    - anandpatel.seoextension
+    - benfreke.menumanager
+    - bennothommo.meta
+    - offline.gdpr
+    - offline.sitesearch
+    - panakour.translate
+    - pikanji.agent
+    - suresoftware.powerseo
+    - vojtasvoboda.twigextensions
+    - zakir.imagecropper
+    - pensoft.accordions
+    - pensoft.articles
+    - pensoft.cardprofiles
+    - pensoft.internaldocuments
+    - pensoft.jumbotron
+    - pensoft.library
+    - pensoft.links
+    - pensoft.maintenance
+    - pensoft.media
+    - pensoft.pageextension
+    - pensoft.partners
+    - pensoft.searchextension
 form:
     tabs:
         defaultTab: 'General settings'
