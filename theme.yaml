@@ -159,39 +159,6 @@ form:
                     action: show
                     field: facebook
                     condition: checked
-            # facebook_custom_icon:
-            #     label: Check to use default icon.
-            #     type: checkbox
-            #     default: true
-            #     tab: 'Social Media'
-            #     trigger:
-            #         action: show
-            #         field: facebook
-            #         condition: checked
-            # facebook_image_icon:
-            #     label: Current header
-            #     comment: Add new image, your theme recomends 32x32
-            #     type: fileupload
-            #     mode: image
-            #     imageWidth: 32
-            #     imageHeight: 32
-            #     fileTypes: jpg,png
-            #     mimeTypes: image
-            #     tab: 'Social Media'
-            #     trigger:
-            #         action: show
-            #         field: facebook
-            #         condition: checked
-            #     thumbOptions:
-            #         mode: crop
-            #         offset:
-            #             - 0
-            #             - 0
-            #         quality: 90
-            #         sharpen: 0
-            #         interlace: false
-            #         extension: auto
-
             twitter_section:
                 label: Twitter
                 type: section
@@ -208,39 +175,6 @@ form:
                     action: show
                     field: twitter
                     condition: checked
-            # twitter_custom_icon:
-            #     label: Check to use default icon.
-            #     type: checkbox
-            #     default: true
-            #     tab: 'Social Media'
-            #     trigger:
-            #         action: show
-            #         field: twitter
-            #         condition: checked
-            # twitter_image_icon:
-            #     label: Current header
-            #     comment: Add new image, your theme recomends 32x32
-            #     type: fileupload
-            #     mode: image
-            #     imageWidth: 32
-            #     imageHeight: 32
-            #     fileTypes: jpg,png
-            #     mimeTypes: image
-            #     tab: 'Social Media'
-            #     trigger:
-            #         action: show
-            #         field: twitter
-            #         condition: checked
-            #     thumbOptions:
-            #         mode: crop
-            #         offset:
-            #             - 0
-            #             - 0
-            #         quality: 90
-            #         sharpen: 0
-            #         interlace: false
-            #         extension: auto
-
             linkedin_section:
                 label: Linkedin
                 type: section
@@ -257,53 +191,20 @@ form:
                     action: show
                     field: linkedin
                     condition: checked
-            # linkedin_custom_icon:
-            #     label: Check to use default icon.
-            #     type: checkbox
-            #     default: true
-            #     tab: 'Social Media'
-            #     trigger:
-            #         action: show
-            #         field: linkedin
-            #         condition: checked
-            # linkedin_image_icon:
-            #     label: Current header
-            #     comment: Add new image, your theme recomends 32x32
-            #     type: fileupload
-            #     mode: image
-            #     imageWidth: 32
-            #     imageHeight: 32
-            #     fileTypes: jpg,png
-            #     mimeTypes: image
-            #     tab: 'Social Media'
-            #     trigger:
-            #         action: show
-            #         field: linkedin
-            #         condition: checked
-            #     thumbOptions:
-            #         mode: crop
-            #         offset:
-            #             - 0
-            #             - 0
-            #         quality: 90
-            #         sharpen: 0
-            #         interlace: false
-            #         extension: auto
-            
             font_size:
                 label: Font size
                 tab: 'Typography'
-                default: medium
+                default: 18px
                 assetVar: 'font-size'
             line_height:
                 label: Line height
                 tab: 'Typography'
-                default: normal
+                default: 1.7em
                 assetVar: 'line-height'
             letter_spacing:
                 label: Letter spacing
                 tab: 'Typography'
-                default: normal
+                default: 0.3px
                 assetVar: 'letter-spacing'
             font_family:
                 label: Font family
