@@ -16,6 +16,10 @@ include_css = 1
 update_partial = "gdpr"
 update_selector = "#gdpr-reload"
 cookie_manager_page = "cookies"
+
+[staticPage]
+useContent = 1
+default = 1
 ==
 {% component 'cookieBanner' %}
 
@@ -39,9 +43,10 @@ cookie_manager_page = "cookies"
     <script src="{{ 'assets/js/jquery-ui.js'|theme }}"></script>
     <script src="{{ 'assets/vendor/bootstrap/js/modal.js'|theme  }}"></script>
     <script type="text/javascript" src="{{ 'assets/js/slick.min.js'|theme }}"></script>
-    
     {% component 'metaList' %}
+    {% framework extras %}
     {% styles %}
+    {% scripts %}
 </head>
 
 <body>
@@ -59,7 +64,11 @@ cookie_manager_page = "cookies"
 
     <!-- Content -->
     <section id="layout-content">
-        {% page %}
+        {%if this.page.fileName == 'about.htm'%}
+            {% page %}
+        {% else %}
+             <div class="container">{% page %}</div>
+        {% endif %}
         {% component 'googleTracker' %}
     </section>
 
@@ -81,8 +90,7 @@ cookie_manager_page = "cookies"
     {% endif %}
 
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    {% framework extras %}
-    {% scripts %}
+
 	<div id="gdpr-reload">
 		{% partial 'gdpr' %}
 	</div>

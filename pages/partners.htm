@@ -8,6 +8,11 @@ header_image = "Maya_Partners.jpg"
 
 [PartnersPage]
 limit = 0
+
+[profile_records]
+show-category-title = 1
+category = 2
+maxItems = 10
 ==
 <div class="container">
 	<div class="row">
@@ -15,5 +20,8 @@ limit = 0
 			<span class="tooltiptext" id="tooltip">Bulgaria</span>
 		</div>
 	</div>
-{% component 'PartnersPage' %}
+	{% component 'PartnersPage' %}
+	<div class="row">
+	{% component 'profile_records' %}
+	</div>
 </div>
