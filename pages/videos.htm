@@ -4,7 +4,6 @@ layout = "default"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
-header_image = "media_center.jpg"
 
 [builderList mediaVideosList]
 modelClass = "pensoft\Media\Models\Videos"
@@ -20,7 +19,7 @@ pageNumber = "{{ :page }}"
 use Pensoft\Media\Models\Videos;
 
 function onStart(){
-	$this['mediaVideosList'] =  Videos::get();
+	$this['mediaVideosList'] =  Videos::where('pensoft_media_videos.parent_id', null)->get();
 }
 ?>
 ==
@@ -36,20 +35,20 @@ function onStart(){
 		{% for record in records %}
 		{# Use spaceless tag to remove spaces inside the A tag. #}
 		{% spaceless %}
-		<div class="col-xs-12">
+		<div class="col-xs-12 col-md-6" id="accordion-documents">
 			<p>{{record.name}}</p>
 			{% if record.file %}
-			<video controls="" height="360px" width="640px"><source src="{{record.file.path}}" type="video/mp4"></video>
+			<video controls="" height="360px" width="570px"><source src="{{record.file.path}}" type="video/mp4"></video>
 
 			<p>Attachment: {{record.file.file_name}}</p>
 
-			<div class="row"><div class="col-xs-12 col-md-2"><p><a class=" btn btn-secondary large fluid download" href="{{record.file.path}}">Download</a></p></div></div>
+			<div class="row"><div class="col-xs-12 col-md-4"><p><a class=" btn btn-secondary large fluid download" href="{{record.file.path}}">Watch video</a></p></div></div>
 
 			<p>&nbsp;</p>
 			{% endif %}
 
 			{% if record.youtube_url %}
-			<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="640" height="360"></iframe>
+			<iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" src="{{record.youtube_url}}" width="570" height="360"></iframe>
 
 			<p>&nbsp;</p>
 			{% endif %}
@@ -100,6 +99,9 @@ function onStart(){
 			</div>
 			{% endif %}
 		</div>
+
+
+
 
 		{% endspaceless %}
 		{% else %}
