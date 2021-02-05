@@ -1,5 +1,5 @@
 .ui.form {
-    .field + .field {
+    .field {
         margin-top: 1rem;
     }
     .fields {
@@ -48,6 +48,7 @@
             background-color: @white-color;
             box-sizing: border-box;
             padding: .7rem 1rem;
+            height: unset!important;
             .line-height();
             .rounded();
             .border(@border-line-width, @border-line-style, @border-color );
@@ -58,4 +59,32 @@
         }
     }
     
+}
+
+#form_contact_form .btn{
+  margin-top: 30px;
+  max-width: 100px;
+}
+
+fieldset{
+  padding:16px;
+  border: 1px solid #ddd;
+}
+
+fieldset legend{
+  padding: 15px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.g-recaptcha{
+  margin: 20px auto;
+}
+
+.page-contact-form hr{
+  display: none;
+}
+
+.red{
+  color: red;
 }
