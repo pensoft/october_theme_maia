@@ -13,6 +13,7 @@ use Pensoft\Media\Models\Newsletters;
 use Pensoft\Media\Models\Presentations;
 use Pensoft\Media\Models\Pressreleases;
 use Pensoft\Media\Models\Videos;
+use Pensoft\Media\Models\Webinars;
 
 function onStart(){
 	$this['logos'] =  MediaLogos::get();
@@ -21,6 +22,7 @@ function onStart(){
 	$this['presentations'] =  Presentations::get();
 	$this['pressreleases'] =  Pressreleases::get();
 	$this['videos'] =  Videos::get();
+	$this['webinars'] =  Webinars::get();
 }
 
 ?>
@@ -67,6 +69,13 @@ function onStart(){
         <div class="col-sm-4 col-xs-9 mt-md-0 mt-1">
 			<div align="center"><img src="{{'pensoft/icons_media_center_Video.svg'|media}}"height="80" /></div>
             <a href="/media-center/videos" class="btn btn-secondary large fluid">Videos</a>
+			<p>&nbsp;</p>
+        </div>
+		{% endif %}
+		{% if webinars.count() %}
+        <div class="col-sm-4 col-xs-9 mt-md-0 mt-1">
+			<div align="center"><img src="{{'pensoft/icons_media_center_webinars.svg'|media}}"height="80" /></div>
+            <a href="/media-center/webinars" class="btn btn-secondary large fluid">Webinars</a>
 			<p>&nbsp;</p>
         </div>
 		{% endif %}
