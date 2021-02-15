@@ -11,7 +11,7 @@ header_image = "MAIA_Webinars.jpg"
 use Pensoft\Media\Models\Webinars;
 
 function onStart(){
-	$this['mediaWebinarsList'] =  Webinars::get();
+	$this['mediaWebinarsList'] =  Webinars::where('pensoft_media_webinars.parent_id', null)->get();
 }
 
 ?>
