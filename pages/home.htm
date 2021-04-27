@@ -10,9 +10,12 @@ robot_follow = "follow"
 [article_highlights]
 maxItems = 10
 title = "Latest from the project"
+baseUrl = "/news"
+templates = "template1"
 
 [Timeline]
 limit = 3
+upcoming = 1
 ==
 <!-- latest from news -->
 {% component 'article_highlights' %}
