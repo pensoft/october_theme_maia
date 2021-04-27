@@ -46,7 +46,7 @@
         flex-direction: column-reverse;
         align-items: center;
         background-color: inherit;
-        
+
         .navbar-nav {
             display: flex;
             flex-basis: 100%;
@@ -66,7 +66,7 @@
     
             .nav-item {
                 display: block;
-                
+
                 padding-top: 0;
                 padding-bottom: 0;
                 padding-left: 0;
@@ -93,18 +93,27 @@
                 
                 background-color: inherit;
                 &.dropdown {
-                    
+
                     .dropdown-menu {
                         position: relative;
                         z-index: @zindex-dropdown;
                         top: 0;
-                        background-color: inherit;
+                        background-color: @navbar-bkg-hover-color;
                         display: block;
                         padding-left: 0;
+                        min-width: 158px;
+
+                        a:hover{
+                          background-color: @navbar-bkg-color;
+                        }
                     }
                 }
             }
         }
+
+      .navbar-nav li:hover a{
+          background-color: @navbar-bkg-hover-color;
+      }
     }
 
 
