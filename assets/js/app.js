@@ -1,3 +1,39 @@
+window.onunload = function (event) {
+	localStorage.setItem('show-notification-box', null);
+}
+
+
+$(document).ready(function(event){
+	var singleTime = localStorage.getItem('show-notification-box');
+	console.log(singleTime)
+	if (singleTime == 'null') {
+		console.log(123123)
+		// 	localStorage.setItem('show-notification-box', 1);
+		$('.notification-box').show();
+	} else{
+		console.log(456456)
+		$('.notification-box').hide();
+	}
+
+	// $('.notification-box').show();
+
+	$(".close-notification-box").click(function() {
+		localStorage.setItem('show-notification-box', 1);
+		$header = $(this);
+		//getting the next element
+		$content = $(".notification-box");
+		//open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+		$content.slideToggle(500, function () {
+			//execute this after slideToggle is done
+			//change text of header based on visibility of content div
+			$header.text(function () {
+				//change text based on condition
+				return $content.is(":visible") ? "Collapse" : "Expand";
+			});
+		});
+
+	});
+});
 
 var documentHasScroll = function() {
     return window.innerHeight <= document.body.offsetHeight;

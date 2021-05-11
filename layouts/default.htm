@@ -63,6 +63,22 @@ default = 1
             page_id=this.page.id
         %}
     </header>
+	{%if this.page.fileName != 'factsheets.htm'%}
+	<!-- Notification box  -->
+	<div class="notification-box row">
+		<div class="col-xs-12 end-xs">
+			<div class="close-notification-box"><span>X</span></div>
+		</div>
+		<div class="col-xs-12 notification-box-content center-xs">
+			Check out the current state of natural capital accounting in 10 European countries through the MAIA fact sheets.
+		</div>
+		<div class="col-xs-12 center-xs">
+			<p><a href="/factsheets" class="notification-box-button">Take me there</a></p>
+		</div>
+
+
+	</div>
+	{% endif %}
 
     <!-- Content -->
     <section id="layout-content">
