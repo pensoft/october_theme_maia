@@ -139,7 +139,7 @@
             .navbar-nav {
                 justify-content: flex-start;
                 flex-direction: row;
-                overflow-x: auto;
+                //overflow-x: auto;
                 width: 100%;
                 .font-size(1);
 
@@ -159,9 +159,8 @@
                         .dropdown-menu {
                             display: none;
                             position: absolute;
-                            top: 73px;
+                            top: 57px;
                             padding-left: 0;
-                            padding-top: 15px;
                         }
                     }
                 }
@@ -174,4 +173,22 @@
   .breakpoint-large-down({
     display: none;
   })
+}
+
+
+/* fix for safari */
+ul.navbar-nav ul{ display:none; }
+ul.navbar-nav li:hover>ul,
+ul.navbar-nav li:active>ul{ display:block;}
+ul.navbar-nav ul {
+  position: absolute;
+}
+ul.navbar-nav a {
+  display:block;
+}
+ul.navbar-nav li:hover,
+ul.navbar-nav li:active{ position:relative; }
+ul.navbar-nav li a:hover,
+ul.navbar-nav li a:active{
+  position:relative;
 }
