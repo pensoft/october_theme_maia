@@ -22,7 +22,7 @@ use System\Models\File;
 use Redirect;
 
 function onStart(){
-	$this['mediaNewslettersList'] =  Newsletters::get();
+	$this['mediaNewslettersList'] =  Newsletters::orderby('date', 'desc')->get();
 	if(post('download')){
 		$file = File::find((int)post('download'));
 		$file_name = $file->getLocalPath();
@@ -62,14 +62,18 @@ return Redirect::to('/media-center/newsletters');
 		{% if record.newsletter_image %}
 		<div class="col-xs-12 col-lg-4">
 			<div class="story broshure_and_poster">
-				<p align="center"><a href="{{record.file.path}}" target="_blank"><img src="{{record.newsletter_image.thumb(305,200,{'mode':'crop'})}}" title="{{record.name}}> </a></p>
+				<p align="center">
+					<a href="{{record.file.path}}" target="_blank">
+						<img src="{{record.newsletter_image.thumb(305,200,{'mode':'crop'})}}" title="{{record.name}}">
+					</a>
+				</p>
 			</div>
-			<div class="media-size">{{record.date |date('F Y')}}</div>
+			<div class="media-size text-center mb-1">{{record.date |date('F Y')}}</div>
 			{% if record.file %}
 			<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}">Download newsletter</a></div>
 
 
-			<div class="media-size">{{record.name}} - {{record.file.extension | uppercase}} {{record.file.size }}</div>
+			<div class="media-size text-center mt-1">{{record.name}} - {{record.file.extension | uppercase}} {{record.file.size }}</div>
 			<p>&nbsp;</p>
 			{% endif %}
 		</div>
