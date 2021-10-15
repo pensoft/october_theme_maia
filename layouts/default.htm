@@ -15,14 +15,11 @@ escape = 1
 include_css = 1
 update_partial = "gdpr"
 update_selector = "#gdpr-reload"
-cookie_manager_page = "cookies"
 
 [staticPage]
 useContent = 1
 default = 1
 ==
-{% component 'cookieBanner' %}
-
 <!DOCTYPE html>
 <html>
 
@@ -113,5 +110,5 @@ default = 1
 		{% partial 'gdpr' %}
 	</div>
 </body>
-
+{% component 'cookieBanner' %}
 </html>
