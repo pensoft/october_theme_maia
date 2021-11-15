@@ -15,8 +15,8 @@ use Redirect;
 function onStart(){
 	$this['mediaWebinarsList'] =  Webinars::where('pensoft_media_webinars.parent_id', 0)->get();
 
-if(post('download')){
-$file = File::find((int)post('download'));
+if(get('download')){
+$file = File::find((int)get('download'));
 $file_name = $file->getLocalPath();
 
 if (file_exists($file_name)) {
