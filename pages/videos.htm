@@ -21,9 +21,9 @@ use System\Models\File;
 use Redirect;
 
 function onStart(){
-	$this['mediaVideosList'] =  Videos::where('pensoft_media_videos.parent_id', null)->get();
-	if(post('download')){
-		$file = File::find((int)post('download'));
+	$this['mediaVideosList'] =  Videos::where('pensoft_media_videos.parent_id', null)->orderBy('created_at', 'DESC')->get();
+	if(get('download')){
+		$file = File::find((int)get('download'));
 		$file_name = $file->getLocalPath();
 
 if (file_exists($file_name)) {
