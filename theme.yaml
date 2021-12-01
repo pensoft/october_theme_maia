@@ -175,6 +175,22 @@ form:
                     action: show
                     field: twitter
                     condition: checked
+            youtube_section:
+                label: Youtube
+                type: section
+                tab: 'Social Media'
+            youtube:
+                label: Enable link to Youtube profile
+                type: switch
+                default: false
+                tab: 'Social Media'
+            youtube_url:
+                label: Input the url to your Youtube page.
+                tab: 'Social Media'
+                trigger:
+                    action: show
+                    field: youtube
+                    condition: checked
             linkedin_section:
                 label: Linkedin
                 type: section
