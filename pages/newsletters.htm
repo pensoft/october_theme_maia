@@ -73,7 +73,7 @@ return Redirect::to('/media-center/newsletters');
 			<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}">Download newsletter</a></div>
 
 
-			<div class="media-size text-center mt-1">{{record.name}} - {{record.file.extension | uppercase}} {{record.file.size }}</div>
+			<div class="media-size text-center mt-1" style="display: none;">{{record.name}} - {{record.file.extension | uppercase}} {{record.file.size }}</div>
 			<p>&nbsp;</p>
 			{% endif %}
 		</div>
