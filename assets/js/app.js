@@ -18,6 +18,23 @@ $(document).ready(function(event){
 		$(".notification-box").slideToggle(500);
 
 	});
+	var singleTime2 = localStorage.getItem('show-notification-box2');
+	if (singleTime2 == 'null') {
+		// 	localStorage.setItem('show-notification-box', 1);
+		$('.notification-box2').slideDown(500);
+	} else{
+		$('.notification-box2').show();
+	}
+
+	$(".close-notification-box2").click(function() {
+		localStorage.setItem('show-notification-box2', 1);
+		$(".notification-box2").slideToggle(500);
+
+	});
+
+
+	$(".carousel-caption").children(':eq(1)').after('<p><a href="https://maiaportal.eu/storage/app/uploads/public/620/27b/7be/62027b7bef9b0184668798.pdf" target="_blank" class="notification-box-button">Read now</a></p>');
+	$(".carousel-caption").children(':eq(0)').after('<p><a href="/factsheets" class="notification-box-button">Take me there</a></p>'); // fact sheets
 });
 
 var documentHasScroll = function() {

@@ -19,6 +19,9 @@ update_selector = "#gdpr-reload"
 [staticPage]
 useContent = 1
 default = 1
+
+[carousel]
+id = 1
 ==
 <!DOCTYPE html>
 <html>
@@ -33,6 +36,7 @@ default = 1
     <link href="{{ ['assets/less/theme.less']|theme }}" rel="stylesheet">
     <link href="{{ ['assets/css/scale.css']|theme }}" rel="stylesheet">
     <link href="{{ ['assets/css/light.css']|theme }}" rel="stylesheet">
+	<link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
     <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
     <script src="{{ 'assets/js/popper.min.js'|theme }}"></script>
     <script src="{{ 'assets/js/tippy-bundle.umd.min.js'|theme}}"></script>
@@ -42,6 +46,7 @@ default = 1
     <script type="text/javascript" src="{{ 'assets/js/slick.min.js'|theme }}"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script src="{{ 'assets/js/ckeditor/ckeditor.js'|theme}}"></script>
+	<script src="{{ 'assets/js/bootstrap.min.js'|theme }}"></script>
     {% component 'metaList' %}
     {% framework extras %}
     {% styles %}
@@ -60,8 +65,23 @@ default = 1
             page_id=this.page.id
         %}
     </header>
+    {% component 'carousel' %}
+	<!-- Notification box 2222
+	<div class="notification-box2 row" style="display:none;">
+		<div class="col-xs-12 end-xs">
+			<div class="close-notification-box2"><span>X</span></div>
+		</div>
+		<div class="col-xs-12 notification-box-content center-xs">
+			Check out the guidelines for biophysical modelling and analysis of ecosystem service flows and assets for the purpose of ecosystem accounting, produced within the context of MAIA
+		</div>
+		<div class="col-xs-12 center-xs">
+			<p><a href="https://maiaportal.eu/storage/app/uploads/public/620/27b/7be/62027b7bef9b0184668798.pdf" target="_blank" class="notification-box-button">Read now</a></p>
+		</div>
+
+
+	</div>-->
 	{%if this.page.fileName != 'factsheets.htm'%}
-	<!-- Notification box  -->
+	<!-- Notification box
 	<div class="notification-box row" style="display:none;">
 		<div class="col-xs-12 end-xs">
 			<div class="close-notification-box"><span>X</span></div>
@@ -74,7 +94,7 @@ default = 1
 		</div>
 
 
-	</div>
+	</div>-->
 	{% endif %}
 
     <!-- Content -->
