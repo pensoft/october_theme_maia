@@ -28,6 +28,12 @@ function onStart(){
 		$file_name = $file->getLocalPath();
 
 if (file_exists($file_name)) {
+
+if (file_exists($file_name)) {
+$ext= $file->getExtension();
+$recordName = get('file_name') ? get('file_name') : 'MAIA_logo.'.$ext;
+}
+
 header('Content-Description: File Transfer');
 header('Content-Type: application/octet-stream');
 header("Content-Type: application/force-download");
@@ -61,24 +67,26 @@ return Redirect::to('/media-center/logo');
 		{% if record.logo_image %}
 			<div class="row">
 				<div class="col-xs-12">
+
 						<p><img src="{{record.logo_image.thumb(305,200,{'mode':'crop'})}}" title="{{record.name}}"></p>
+					<h3 class="card-title">{{record.name}}</h3>
 				</div>
 			</div>
 
 			<div class="row">
 				{% if record.file_jpg %}
 					<div class="col-xs-12 col-lg-4">
-						<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file_jpg.id}}">Download .jpg</a></div>
+						<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file_jpg.id}}&file_name={{record.file_png.file_name|replace({' ': '_'})}}">Download .jpg</a></div>
 					</div>
 				{% endif %}
 				{% if record.file_png %}
 				<div class="col-xs-12 col-lg-4">
-					<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file_png.id}}">Download .png</a></div>
+					<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file_png.id}}&file_name={{record.file_png.file_name|replace({' ': '_'})}}">Download .png</a></div>
 				</div>
 				{% endif %}
 				{% if record.file_eps %}
 				<div class="col-xs-12 col-lg-4">
-					<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file_eps.id}}">Download .eps</a></div>
+					<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file_eps.id}}&file_name={{record.file_png.file_name|replace({' ': '_'})}}">Download .eps</a></div>
 				</div>
 				{% endif %}
 			</div>
