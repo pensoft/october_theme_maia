@@ -165,14 +165,9 @@
   //height: 100vh;
   overflow: hidden;
   max-height: 250px!important;
-  &:first-of-type{
-    img{
-      .breakpoint-small-down({
-        object-position: -550px center;
-      });
-    }
-
-  }
+  .breakpoint-small-down({
+    max-height: 370px!important;
+  });
 }
 
 .carousel-inner>.item>img{
