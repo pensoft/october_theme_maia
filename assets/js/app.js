@@ -33,7 +33,7 @@ $(document).ready(function(event){
 	});
 
 
-	$(".carousel-caption").children(':eq(1)').after('<p><a href="https://maiaportal.eu/storage/app/uploads/public/620/27b/7be/62027b7bef9b0184668798.pdf" target="_blank" class="notification-box-button">Read now</a></p>');
+	$(".carousel-caption").children(':eq(1)').after('<p><a href="https://maiaportal.eu/storage/app/media/MAIA_Guidelines_for_biophysical_modeling_final_version.pdf" target="_blank" class="notification-box-button">Read now</a></p>');
 	$(".carousel-caption").children(':eq(0)').after('<p><a href="/factsheets" class="notification-box-button">Take me there</a></p>'); // fact sheets
 });
 
