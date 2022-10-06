@@ -22,7 +22,7 @@ use System\Models\File;
 use Redirect;
 
 function onStart(){
-	$this['mediaPresentatoinsList'] =  Presentations::get();
+	$this['mediaPresentatoinsList'] =  Presentations::orderBy('id', 'desc')->get();
 	if(get('download')){
 		$file = File::find((int)get('download'));
 		$file_name = $file->getLocalPath();
@@ -64,10 +64,10 @@ return Redirect::to('/media-center/presentation');
 			<div class="story broshure_and_poster">
 				<p align="center"><a href="{{record.file.path}}" target="_blank"><img src="{{record.presentation_image.thumb(305,200,{'mode':'crop'})}}" title="{{record.name}}> </a></p>
 			</div>
-			
+
 			{% if record.file %}
 			<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}">Download presentation</a></div>
-            
+
 			<div class="media-size">{{record.name}} - {{record.file.extension | uppercase}} {{record.file.size }}</div>
 			<p>&nbsp;</p>
 			{% endif %}
