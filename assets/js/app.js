@@ -2,6 +2,11 @@ window.onunload = function () {
 	localStorage.setItem('show-notification-box', null);
 }
 
+$(window).scroll(function(){
+    var tooltip = document.getElementById("tooltip");
+    tooltip.classList.remove("active");
+});
+
 
 
 $(document).ready(function(event){
