@@ -1,4 +1,4 @@
-title = "Flyer"
+title = "Promotional Materials"
 url = "/media-center/flyer"
 layout = "default"
 is_hidden = 0
@@ -65,7 +65,7 @@ return Redirect::to('/media-center/flyer');
 				<p align="center"><a href="{{record.file.path}}" target="_blank"><img src="{{record.flyer_image.thumb(305,200,{'mode':'crop'})}}" title="{{record.name}}> </a></p>
 			</div>
 			{% if record.file %}
-			<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}">Download flyer</a></div>
+			<div class="media-btn_broshure_and_poster"><a class="download  btn btn-secondary large fluid" href="{{ ''| page }}?{{queries}}&download={{record.file.id}}">Download {{record.name}}</a></div>
 
 			<div class="media-size">{{record.name}} - {{record.file.extension | uppercase}} {{record.file.size }}</div>
 			<p>&nbsp;</p>
